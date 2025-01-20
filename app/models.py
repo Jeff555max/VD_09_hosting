@@ -3,14 +3,14 @@ from app import login_manager
 from flask_login import UserMixin
 
 # Определение модели User
-class User(db.Model, UserMixin):  # db.Model с заглавной буквы
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
-    clicks = db.Column(db.Integer, default=0)  # default вместо defaults
+    clicks = db.Column(db.Integer, default=0)
 
     def __repr__(self):
-        return f"User {self.username} - clicks: {self.clicks}"  # Убрана лишняя кавычка
+        return f"User {self.username} - clicks: {self.clicks}"
 
 # Загрузка пользователя по id для flask_login
 @login_manager.user_loader

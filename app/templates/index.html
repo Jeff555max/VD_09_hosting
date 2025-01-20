@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-primary">Кликер!</h1>
+    <p class="fs-5 text-muted">Количество кликов: <span class="fw-bold text-success">{{ current_user.clicks }}</span></p>
+    <a href="{{ url_for('click') }}" class="btn btn-lg btn-primary px-4 py-2 shadow-sm">
+        <i class="bi bi-hand-index"></i> Кнопка
+    </a>
+</div>
+{% endblock %}
