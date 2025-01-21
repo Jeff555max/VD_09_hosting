@@ -48,7 +48,7 @@
 Удаляем часть кода:
 
 if __name__ == '__main__':
-    app.route(debug=True)
+    app.run(debug=True)
 Следим, чтобы, помимо импорта, остались строчки:
 
 with app.app_context():
